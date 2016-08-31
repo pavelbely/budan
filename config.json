@@ -1,8 +1,14 @@
 {
   "vkAccessToken" : "",
-  "methodEndpoint" : "https://api.vk.com/method/",
-  "groupOwnerId" : "-127495990",
+  "vkMethodEndpoint" : "https://api.vk.com/method/",
+  "vkWallGetCommentsMethod" : "wall.getComments?",
+  "vkWallPostMethod" : "wall.post?",
+  "vkGroupOwnerId" : "-127495990",
+  "locale" : "by",
   "postOnBehalfOfGroup" : true,
+  "totalPayment" : 120,
   "daysToAnswerDeadline" : 10,
-  "message" : "Привет всем, я шалаш-бот! Я собираю инфу, кто будет репать в %NEXT_PERIOD%. В своём ответе на этот пост сообщите, пожалуйста, сколько человек от вашей группы будет репать. Инфу указывайте, пожалуйста, СТРОГО в форме <ИМЯ_АРТИСТА_БЕЗ_ПРОБЕЛОВ> <КОЛИЧЕСТВО ЧЕЛОВЕК>. Например, agnosticfront 5. Иначе я не смогу его понять :(. Дайте ответ, пожалуйста до %ANSWER_DEADLINE%. Спасибо!"
+  "commentRegex" : "^([\\wа-яА-ЯіІўЎ']+)\\s(\\d+)",
+  "announcementMessage" : "Прывіт усім, я шалаш-бот! Я збіраю інфу, хто будзе репетаваць у %NEXT_PERIOD%. У сваім адказе, калі ласка, напішыце, колькі чалавек ад вашага гурту будзе рэпетаваць - ВАЖНА - у форме <ІМЯ_АРТЫСТА_БЕЗ_ПРАБЕЛАЎ> <КОЛЬКАСЦЬЧАЛАВЕК>. Напрыклад, agnosticfront 5. Інакш я не зразумею :(. Калі ласка, адкажыце да %ANSWER_DEADLINE%. Дзякуй!",
+  "resultMessage" : "Нас у гэтым перыядзе %MEMBER_COUNT%. Атрымліваецца па %MEMBER_SHARE% на удзельніка. Здайце, калі ласка, грошы пад фіялетавую гітарную галаву. Дзякуй!"
 }

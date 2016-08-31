@@ -13,12 +13,11 @@ module.exports.post = function* (accessToken, ownerId, postOnBehalfOfGroup, mess
 module.exports.getComments = function* (accessToken, ownerId, postId) {
   let url = buildGetCommentsUrl(accessToken, ownerId, postId);
   let res = yield request(url);
-  console.log(res.body);
   return JSON.parse(res.body).response.items;
 }
 
 function buildPostUrl(accessToken, ownerId, postOnBehalfOfGroup, message) {
-  var origin = config.methodEndpoint + 'wall.post?';
+  var origin = config.vkMethodEndpoint + config.vkWallPostMethod;
   var query = {
     access_token : accessToken,
     owner_id : ownerId,
@@ -30,7 +29,7 @@ function buildPostUrl(accessToken, ownerId, postOnBehalfOfGroup, message) {
 }
 
 function buildGetCommentsUrl(accessToken, ownerId, postId) {
-  var origin = config.methodEndpoint + 'wall.getComments?';
+  var origin = config.vkMethodEndpoint + config.vkWallGetCommentsMethod;
   var query = {
     access_token : accessToken,
     owner_id : ownerId,
