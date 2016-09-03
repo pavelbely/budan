@@ -23,6 +23,6 @@ co(function* () {
 
   fs.writeFile('lastPost.json', JSON.stringify(post), function (err) {
     if (err) throw err;
-    console.log('Post saved!');
+    console.log('Пост апублікаваны!');
   });
 });

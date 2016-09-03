@@ -13,6 +13,8 @@
     "koa": "^1.2.1",
     "koa-request": "^1.0.0",
     "moment": "^2.14.1",
+    "money": "^0.2.0",
+    "node-fetch": "^1.6.0",
     "querystring": "^0.2.0"
   }
 }
