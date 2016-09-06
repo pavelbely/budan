@@ -4,8 +4,9 @@ const NumberUtils = require('./NumberUtils.js');
 
 module.exports.countPerson = function (comments) {
   if (comments == null || comments.length == 0) {
-    console.error("Няма каментаў :(");
-    throw new Error("Няма каментаў :(");
+    let errorMessage = "Нет комментов :(";
+    console.error(errorMessage);
+    throw new Error(errorMessage);
   }
 
   let personCount = comments.map(function(comment) {
@@ -19,8 +20,9 @@ module.exports.countPerson = function (comments) {
     });
 
   if (personCount == 0 || personCount === undefined) {
-    console.error("Што, ніводнага перса?");
-    throw new Error("Што, ніводнага перса?");
+    let errorMessage = "Что, ни единого участника? :(";
+    console.error(errorMessage);
+    throw new Error(errorMessage);
   }
 
   return personCount;

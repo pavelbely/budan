@@ -28,5 +28,5 @@ co(function* () {
     config.vkGroupOwnerId,
     config.postOnBehalfOfGroup,
     message);
-  console.log("Адказ на пост таксама апублікаваны!")
+  console.log("Результирующий пост опубликован!")
 });

@@ -10,7 +10,7 @@ let getFutureMonthName = function (months) {
 }
 
 module.exports.getNextPeriod = function () {
-  return "(" + getFutureMonthName(1) + "-" + getFutureMonthName(2) + ")";
+  return "(" + getFutureMonthName(1) + "-" + getFutureMonthName(config.periodLengthInMonths) + ")";
 }
 
 module.exports.getFutureDateAsString = function (days) {

@@ -1,15 +1,16 @@
 {
-  "vkAccessToken" : "",
+  "vkAccessToken" : "efdf211ad5c3d427a92e38005e25a3e17172b18bdb778764ca2ba50c9dc1329606252e35095e678530135",
   "vkMethodEndpoint" : "https://api.vk.com/method/",
   "vkWallGetCommentsMethod" : "wall.getComments?",
   "vkWallPostMethod" : "wall.post?",
   "vkGroupOwnerId" : "-127495990",
-  "locale" : "be",
+  "locale" : "ru",
   "postOnBehalfOfGroup" : true,
   "total" : 120,
   "currency" : 145,
+  "periodLengthInMonths" : 2,
   "daysToAnswerDeadline" : 10,
-  "commentRegex" : "^([\\wа-яА-ЯіІўЎ']+)\\s(\\d+)",
-  "announcementMessage" : "Прывіт усім, я будан-бот! Я збіраю інфу, хто будзе репетаваць у наступным перыядзе %NEXT_PERIOD%. У сваім адказе, калі ласка, напішыце, колькі чалавек ад вашага гурту будзе рэпетаваць - ВАЖНА - у форме <ІМЯ_АРТЫСТА_БЕЗ_ПРАБЕЛАЎ> <КОЛЬКАСЦЬЧАЛАВЕК>. Напрыклад, agnosticfront 5. Інакш я не зразумею :(. Калі ласка, адкажыце да %ANSWER_DEADLINE%. Дзякуй!",
-  "resultMessage" : "Нас у гэтым перыядзе %MEMBER_COUNT%. Атрымліваецца па %MEMBER_SHARE% на удзельніка. Здайце, калі ласка, грошы пад фіялетавую гітарную галаву. Дзякуй!"
+  "commentRegex" : "^([\\wа-яА-ЯіІўЎёЁ']+)\\s(\\d+)",
+  "announcementMessage" : "Привет всем, я шалаш-бот! Я собираю инфу, кто будет репать в %NEXT_PERIOD%. В своём ответе на этот пост сообщите, пожалуйста, сколько человек от вашей группы будет репать. Инфу указывайте, пожалуйста, СТРОГО в форме <ИМЯ_АРТИСТА_БЕЗ_ПРОБЕЛОВ> <КОЛИЧЕСТВО ЧЕЛОВЕК>. Например, agnosticfront 5. Иначе я не смогу его понять :(. Дайте ответ, пожалуйста до %ANSWER_DEADLINE%. Спасибо!",
+  "resultMessage" : "Нас в этом периоде %MEMBER_COUNT%. Получается по %MEMBER_SHARE% на участника. Сдайте, пожалуйста, деньги, под фиолетовую гитарную голову. Спасибо!"
 }
