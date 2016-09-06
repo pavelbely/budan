@@ -1,5 +1,5 @@
 {
-  "vkAccessToken" : "efdf211ad5c3d427a92e38005e25a3e17172b18bdb778764ca2ba50c9dc1329606252e35095e678530135",
+  "vkAccessToken" : "",
   "vkMethodEndpoint" : "https://api.vk.com/method/",
   "vkWallGetCommentsMethod" : "wall.getComments?",
   "vkWallPostMethod" : "wall.post?",
