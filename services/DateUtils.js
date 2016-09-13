@@ -9,11 +9,16 @@ let getFutureMonthName = function (months) {
   return moment().add(months, "months").format('MMMM')
 }
 
-module.exports.getNextPeriod = function () {
-  return "(" + getFutureMonthName(1) + "-" + getFutureMonthName(config.periodLengthInMonths) + ")";
+module.exports.getNextPeriod = function (periodLengthInMonths) {
+console.log("hi there");
+  if (periodLengthInMonths <= 1) {
+    return "(" + getFutureMonthName(1) + ")";
+  }
+  return "(" + getFutureMonthName(1) + "-" + getFutureMonthName(periodLengthInMonths) + ")";
 }
 
 module.exports.getFutureDateAsString = function (days) {
+  ;console.log("ho")
   return moment().add(days, "days").format('DD.MM.YY');
 }
 

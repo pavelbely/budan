@@ -7,9 +7,12 @@ const fs = require('fs');
 const co = require('co');
 
 co(function* () {
+  console.log("hi");
   let message = config.announcementMessage
-    .replace("%NEXT_PERIOD%", DateUtils.getNextPeriod())
+    .replace("%NEXT_PERIOD%", DateUtils.getNextPeriod(config.periodLengthInMonths))
     .replace("%ANSWER_DEADLINE%", DateUtils.getFutureDateAsString(config.daysToAnswerDeadline));
+  console.log(message);
+
 
   let postId = yield* WallService.post(config.vkAccessToken,
     config.vkGroupOwnerId,
@@ -20,6 +23,8 @@ co(function* () {
     id : postId,
     date : new Date()
   }
+
+  console.log(post);
 
   fs.writeFile('lastPost.json', JSON.stringify(post), function (err) {
     if (err) throw err;
