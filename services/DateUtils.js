@@ -18,7 +18,6 @@ console.log("hi there");
 }
 
 module.exports.getFutureDateAsString = function (days) {
-  ;console.log("ho")
   return moment().add(days, "days").format('DD.MM.YY');
 }
 
