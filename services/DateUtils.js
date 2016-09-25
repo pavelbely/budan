@@ -10,7 +10,6 @@ let getFutureMonthName = function (months) {
 }
 
 module.exports.getNextPeriod = function (periodLengthInMonths) {
-console.log("hi there");
   if (periodLengthInMonths <= 1) {
     return "(" + getFutureMonthName(1) + ")";
   }
@@ -21,6 +20,6 @@ module.exports.getFutureDateAsString = function (days) {
   return moment().add(days, "days").format('DD.MM.YY');
 }
 
-module.exports.todayAsString = function () {
-  return moment().format('YYYY-M-D');
+module.exports.todayAsString = function (format) {
+  return moment().format(format);
 }

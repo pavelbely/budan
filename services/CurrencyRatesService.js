@@ -4,7 +4,7 @@ const request = require('koa-request');
 const DateUtils = require('./DateUtils.js');
 
 module.exports.getCurrencyRate = function* (sourceCurrency) {
-  const url = "http://www.nbrb.by/API/ExRates/Rates/" + sourceCurrency + "?onDate=" + DateUtils.todayAsString();
+  const url = "http://www.nbrb.by/API/ExRates/Rates/" + sourceCurrency + "?onDate=" + DateUtils.todayAsString('YYYY-M-D');
   let res = yield request(url);
   return JSON.parse(res.body).Cur_OfficialRate;
 }
