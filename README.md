@@ -1,4 +1,4 @@
-Эта же заметка опубликована на [medium]
+Эта же заметка опубликована на [Medium](https://medium.com/@pavelbely/autoposting-and-parsing-comments-with-vk-api-abde01c4cac5#.ix9dqzbby)
 
 Автопостинг и парсинг комментов VK с помощью API
 ================================================
