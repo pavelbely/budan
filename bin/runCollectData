@@ -1,2 +1,18 @@
-#!/bin/sh
-node ../collectData.js
+#! /app/bin/node
+"use strict";
+
+const DateUtils = require('../services/DateUtils.js');
+const moment = require('moment');
+
+const currentMonth = moment().month();
+// const PAY_MONTHS = process.env.PAY_MONTHS.split(' ')
+const PAY_MONTHS = '1 2 3'.split(' ');
+
+if (PAY_MONTHS.includes(currentMonth)) {
+  return;
+}
+
+function sayHello() {
+  console.log('Hello');
+}
+sayHello();
