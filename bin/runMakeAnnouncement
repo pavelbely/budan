@@ -1,11 +1,13 @@
-#!/bin/sh
+#!/usr/bin/env node
+
+"use strict";
 
 const DateUtils = require('../services/DateUtils.js');
 
 const ANNOUNCEMENT_MONTHS = process.env.ANNOUNCEMENT_MONTHS.split(';');
 const ANNOUNCEMENT_DAY_OF_MONTH = process.env.ANNOUNCEMENT_DAY_OF_MONTH;
 
-if (!(ANNOUNCEMENT_MONTHS.includes(DateUtils.getCurrentMonth()) && ANNOUNCEMENT_DAY_OF_MONTH === DateUtils.getCurrentDayOfMonth())) {
+if (!(ANNOUNCEMENT_MONTHS.includes(DateUtils.getCurrentMonth()) !== -1 && ANNOUNCEMENT_DAY_OF_MONTH === DateUtils.getCurrentDayOfMonth())) {
   return;
 }
 
