@@ -6,25 +6,29 @@ const DateUtils = require('./services/DateUtils.js');
 const fs = require('fs');
 const co = require('co');
 
-co(function* () {
-  let message = config.announcementMessage
-    .replace("%NEXT_PERIOD%", DateUtils.getNextPeriod(config.periodLengthInMonths))
-    .replace("%ANSWER_DEADLINE%", DateUtils.getFutureDateAsString(config.daysToAnswerDeadline));
+function makeAnnouncement() {
+    co(function*() {
+        let message = config.announcementMessage
+            .replace("%NEXT_PERIOD%", DateUtils.getNextPeriod(config.periodLengthInMonths))
+            .replace("%ANSWER_DEADLINE%", DateUtils.getFutureDateAsString(config.daysToAnswerDeadline));
 
-  let postId = yield* WallService.post(process.env.VK_ACCESS_TOKEN,
-    process.env.VK_GROUP_OWNER_ID,
-    config.postOnBehalfOfGroup,
-    message);
+        let postId = yield* WallService.post(process.env.VK_ACCESS_TOKEN,
+            process.env.VK_GROUP_OWNER_ID,
+            config.postOnBehalfOfGroup,
+            message);
 
-  let post = {
-    id : postId,
-    date : new Date()
-  }
+        let post = {
+            id: postId,
+            date: new Date()
+        }
 
-  console.log(post);
+        console.log(post);
 
-  fs.writeFile('lastPost.json', JSON.stringify(post), function (err) {
-    if (err) throw err;
-    console.log('Пост опубликован!');
-  });
-});
+        fs.writeFile('lastPost.json', JSON.stringify(post), function(err) {
+            if (err) throw err;
+            console.log('Пост опубликован!');
+        });
+    });
+}
+
+module.exports = makeAnnouncement;
