@@ -5,7 +5,7 @@
 const DateUtils = require('../services/DateUtils.js');
 const makeAnnouncement = require('../makeAnnouncement.js');
 
-const ANNOUNCEMENT_MONTHS = process.env.ANNOUNCEMENT_MONTHS.split(';');
+const ANNOUNCEMENT_MONTHS = process.env.ANNOUNCEMENT_MONTHS.split(';').map(Number);
 const ANNOUNCEMENT_DAY_OF_MONTH = process.env.ANNOUNCEMENT_DAY_OF_MONTH;
 
 if (!(ANNOUNCEMENT_MONTHS.includes(DateUtils.getCurrentMonth()) && ANNOUNCEMENT_DAY_OF_MONTH == DateUtils.getCurrentDayOfMonth())) {
