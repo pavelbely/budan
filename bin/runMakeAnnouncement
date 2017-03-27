@@ -12,6 +12,7 @@ if (!(ANNOUNCEMENT_MONTHS.includes(DateUtils.getCurrentMonth()) && ANNOUNCEMENT_
     console.log(ANNOUNCEMENT_MONTHS.includes(DateUtils.getCurrentMonth()));
     console.log(ANNOUNCEMENT_MONTHS.indexOf(DateUtils.getCurrentMonth()) !== -1);
     console.log(ANNOUNCEMENT_MONTHS.toString());
+    console.log(DateUtils.getCurrentMonth());
     console.log(ANNOUNCEMENT_DAY_OF_MONTH == DateUtils.getCurrentDayOfMonth());
     console.log("Annoncement not made, not today.")
     return;
