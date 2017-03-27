@@ -10,6 +10,8 @@ const ANNOUNCEMENT_DAY_OF_MONTH = process.env.ANNOUNCEMENT_DAY_OF_MONTH;
 
 if (!(ANNOUNCEMENT_MONTHS.includes(DateUtils.getCurrentMonth()) && ANNOUNCEMENT_DAY_OF_MONTH == DateUtils.getCurrentDayOfMonth())) {
     console.log(ANNOUNCEMENT_MONTHS.includes(DateUtils.getCurrentMonth()));
+    console.log(ANNOUNCEMENT_MONTHS.indexOf(DateUtils.getCurrentMonth()) !== -1);
+    console.log(ANNOUNCEMENT_MONTHS.toString());
     console.log(ANNOUNCEMENT_DAY_OF_MONTH == DateUtils.getCurrentDayOfMonth());
     console.log("Annoncement not made, not today.")
     return;
