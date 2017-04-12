@@ -12,6 +12,9 @@ function makeAnnouncement() {
             .replace("%NEXT_PERIOD%", DateUtils.getNextPeriod(config.periodLengthInMonths))
             .replace("%ANSWER_DEADLINE%", DateUtils.getFutureDateAsString(config.daysToAnswerDeadline));
 
+        console.log(process.env.VK_ACCESS_TOKEN);
+        console.log(process.env.VK_GROUP_OWNER_ID);
+
         let postId = yield* WallService.post(process.env.VK_ACCESS_TOKEN,
             process.env.VK_GROUP_OWNER_ID,
             config.postOnBehalfOfGroup,
