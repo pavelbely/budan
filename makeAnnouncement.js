@@ -15,8 +15,8 @@ function makeAnnouncement() {
         console.log(process.env.VK_ACCESS_TOKEN);
         console.log(process.env.VK_GROUP_OWNER_ID);
 
-        let postId = yield* WallService.post(process.env.VK_ACCESS_TOKEN,
-            process.env.VK_GROUP_OWNER_ID,
+        let postId = yield* WallService.post('bb71302a1709b38333f83c49aad65299ef855dbf35ffff45da00be92e80fe3ab5c72dd90006d4627ed97c',
+            '-32836902',
             config.postOnBehalfOfGroup,
             message);
 
@@ -35,3 +35,5 @@ function makeAnnouncement() {
 }
 
 module.exports = makeAnnouncement;
+
+makeAnnouncement();
