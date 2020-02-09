@@ -10,6 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "co": "^4.6.0",
+    "json-2-csv": "^3.5.9",
+    "json2csv": "^4.5.4",
     "koa": "^1.2.1",
     "koa-request": "^1.0.0",
     "moment": "^2.14.1",

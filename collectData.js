@@ -8,6 +8,7 @@ const PersonUtils = require('./services/PersonUtils.js');
 const CurrencyRatesService = require('./services/CurrencyRatesService.js');
 const fs = require('fs');
 const co = require('co');
+const converter = require('json-2-csv');
 
 co(function* () {
   let post = JSON.parse(fs.readFileSync('lastPost.json', 'utf8'));
@@ -16,17 +17,28 @@ co(function* () {
     config.vkGroupOwnerId,
     post.id);
 
-  let personCount = PersonUtils.countPerson(comments);
+  converter.json2csv(comments, (err, csvFile) => {
+    console.log(csvFile);
 
-  let currencyRate = yield* CurrencyRatesService.getCurrencyRate(config.currency);
+    fs.writeFile('comments.csv', csvFile, function (err) {
+      if (err) throw err;
+      console.log('Пост опубликован!');
+    });
+  });
 
-  let message = config.resultMessage
-    .replace("%MEMBER_COUNT%", personCount)
-    .replace("%MEMBER_SHARE%", Math.ceil(config.total / personCount * currencyRate * 100) / 100);
 
-  let postId = yield* WallService.post(config.vkAccessToken,
-    config.vkGroupOwnerId,
-    config.postOnBehalfOfGroup,
-    message);
+
+  // let personCount = PersonUtils.countPerson(comments);
+
+  // let currencyRate = yield* CurrencyRatesService.getCurrencyRate(config.currency);
+
+  // let message = config.resultMessage
+  //   .replace("%MEMBER_COUNT%", personCount)
+  //   .replace("%MEMBER_SHARE%", Math.ceil(config.total / personCount * currencyRate * 100) / 100);
+
+  // let postId = yield* WallService.post(config.vkAccessToken,
+  //   config.vkGroupOwnerId,
+  //   config.postOnBehalfOfGroup,
+  //   message);
   console.log("Результирующий пост опубликован!")
 });
