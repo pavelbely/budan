@@ -2,25 +2,32 @@
 
 const config = require('./config.json');
 const WallService = require('./services/WallService.js');
+const GroupService = require('./services/GroupService');
+const UserService = require('./services/UserService');
 const DateUtils = require('./services/DateUtils.js');
 const NumberUtils = require('./services/NumberUtils.js');
 const PersonUtils = require('./services/PersonUtils.js');
 const CurrencyRatesService = require('./services/CurrencyRatesService.js');
 const fs = require('fs');
-const co = require('co');
 const converter = require('json-2-csv');
 
-co(function* () {
+async function main() {
   let post = JSON.parse(fs.readFileSync('lastPost.json', 'utf8'));
 
-  let comments = yield* WallService.getComments(config.vkAccessToken,
-    config.vkGroupOwnerId,
-    post.id);
+  let result = [];
+  for (let i = 0; i < 341; i++) {
+    let user_ids = await GroupService.getMembers(config.vkAccessToken,
+      config.vkGroupOwnerId,
+      i);
+    let users = await UserService.getUsers(config.vkAccessToken,
+      user_ids);
+    result = result.concat(users);
+  }
 
-  converter.json2csv(comments, (err, csvFile) => {
+  converter.json2csv(result, (err, csvFile) => {
     console.log(csvFile);
 
-    fs.writeFile('comments.csv', csvFile, function (err) {
+    fs.writeFile('users.csv', csvFile, function (err) {
       if (err) throw err;
       console.log('Пост опубликован!');
     });
@@ -41,4 +48,6 @@ co(function* () {
   //   config.postOnBehalfOfGroup,
   //   message);
   console.log("Результирующий пост опубликован!")
-});
+}
+
+main();

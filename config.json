@@ -1,6 +1,6 @@
 {
-  "vkAccessToken" : "c8c6818dd9dfe56250b86b0d87e10c241ad6a1355b9894811cac75304f4c4ad030dd7000127617c83677c",
-  "vkGroupOwnerId" : "-127495990",
+  "vkAccessToken" : "ad63ed6a010c14e917d33763a2cfe03fd3e2db093c2710381fc2c50c0b2bd372d6407c47d61b3c18d9aa9",
+  "vkGroupOwnerId" : "tribunaby",
   "locale" : "ru",
   "postOnBehalfOfGroup" : true,
   "total" : 120,
@@ -12,5 +12,7 @@
   "resultMessage" : "Нас в этом периоде %MEMBER_COUNT%. Получается по %MEMBER_SHARE% BYN на участника. Сдайте, пожалуйста, деньги, под фиолетовую гитарную голову. Спасибо!",
   "vkMethodEndpoint" : "https://api.vk.com/method/",
   "vkWallGetCommentsMethod" : "wall.getComments?",
+  "vkGroupGetMembersMethod" : "groups.getMembers?",
+  "vkUsersGetMethod" : "users.get?",
   "vkWallPostMethod" : "wall.post?"
 }

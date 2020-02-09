@@ -4,7 +4,7 @@ const config = require('../config.json');
 const request = require('koa-request');
 const querystring = require('querystring');
 
-module.exports.post = function* (accessToken, ownerId, postOnBehalfOfGroup, message) {
+module.exports.post = async function* (accessToken, ownerId, postOnBehalfOfGroup, message) {
   let url = buildPostUrl(accessToken, ownerId, postOnBehalfOfGroup, message);
   let res = yield request(url);
   return JSON.parse(res.body).response.post_id;
@@ -13,7 +13,8 @@ module.exports.post = function* (accessToken, ownerId, postOnBehalfOfGroup, mess
 module.exports.getComments = function* (accessToken, ownerId, postId) {
   let url = buildGetCommentsUrl(accessToken, ownerId, postId);
   let res = yield request(url);
-  return JSON.parse(res.body).response.items;
+  let body = JSON.parse(res.body);
+  return body.response.items;
 }
 
 function buildPostUrl(accessToken, ownerId, postOnBehalfOfGroup, message) {
